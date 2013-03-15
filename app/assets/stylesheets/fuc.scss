@@ -1,0 +1,98 @@
+div.fucked-up-cards {
+  div.white-cards {
+    float: left;
+    margin: 5px;
+
+    ul {
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+      
+      li {
+        float: left;
+
+        div.card {
+          margin-top: 0px;
+
+          div.left-card {
+            background-color: Black;
+          }
+
+          div.middle-card {
+            background-color: DimGrey;
+          }
+
+          div.right-card {
+            background-color: LightGrey;
+          }
+
+          div.logo-text {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  div.card {
+    float: left;
+    margin: 5px;
+
+    width: 200px;
+    height: 350px;
+    box-shadow: 1px 1px 1px 1px grey;
+    background-color: white;
+    color: white;
+    font-family: helvetica neue;
+    font-size: 22px;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10px;
+    border-radius: 7px;
+    z-index: -1;
+
+    div.logo {
+      position: absolute;
+      top: 330px;
+      z-index: 5;
+
+      div.left-card {
+        width: 15px;
+        height: 17px;
+        background-color: DimGrey;
+        z-index: 10;
+        position: relative;
+        margin-bottom: -17px;
+        -webkit-transform: rotate(-12deg);
+      }
+
+      div.middle-card {
+        width: 15px;
+        height: 17px;
+        background-color: LightGrey;
+        z-index: 20;
+        position: relative;
+        left: 6px;
+        margin-bottom: -17px;
+      }
+      
+      div.right-card {
+        width: 15px;
+        height: 17px;
+        background-color: white;
+        z-index: 30;
+        position: relative;
+        left: 12px;
+        -webkit-transform: rotate(14deg);
+      }
+
+      div.logo-text {
+        font-size: 10px;
+        position: relative;
+        left: 32px;
+        top: -12px;
+      }
+    }
+  }
+}

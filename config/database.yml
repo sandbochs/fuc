@@ -1,0 +1,19 @@
+common: &common
+  adapter: postgresql
+  host: /tmp
+  username: togo
+  password:
+  encoding: utf8
+  min_messages: WARNING
+
+production:
+  <<: *common
+  database: fuc_prod
+
+development:
+  <<: *common
+  database: fuc_dev
+
+test:
+  <<: *common
+  database: fuc_test

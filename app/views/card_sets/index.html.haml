@@ -1,0 +1,8 @@
+.fucked-up-cards(ng-controller='FUC.Controller.CardsCtrl')
+  .card(card-model='black' ng-style="{ 'backgroundColor':'black' }" ng-cloak)
+  .white-cards
+    %ul
+      %li(ng-repeat='white in whites')
+        .card(card-model='white' ng-style="{ 'color':'black' }")
+  %button.new-set-btn(ng-click='randomSet()')
+    Random
