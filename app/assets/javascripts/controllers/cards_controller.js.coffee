@@ -1,11 +1,19 @@
-FUC.Controller.CardsCtrl = (scope, blackCardSvc, whiteCardSvc)->
+FUC.Controller.CardsCtrl = (scope, http, blackCardSvc, whiteCardSvc)->
   queryWhiteCards = ->
-    whiteCardSvc.cards.query (data) ->
-      scope.whiteCards = data
+    options =
+      url: '/api/white_cards'
+      method: 'get'
+
+    http(options).then (response) ->
+      scope.whiteCards = response.data
       scope.randomSet()
 
-  blackCardSvc.cards.query (data) ->
-    scope.blackCards = data
+  blkOptions =
+    url: '/api/black_cards'
+    method: 'get'
+
+  http(blkOptions).then (response) ->
+    scope.blackCards = response.data
     queryWhiteCards()
 
   randomIndex = (array) ->
@@ -24,8 +32,8 @@ FUC.Controller.CardsCtrl = (scope, blackCardSvc, whiteCardSvc)->
 
   scope.randomSet = ->
     scope.randomBlack()
-    blanks = scope.black.text.match(/_{10}/g)
+    blanks = scope.black.text.match(/_+/g)
     answerCount = if blanks then blanks.length else 1
     scope.randomWhites answerCount
 
-FUC.Controller.CardsCtrl.$inject = ['$scope', 'BlackCardSvc', 'WhiteCardSvc']
+FUC.Controller.CardsCtrl.$inject = ['$scope', '$http', 'BlackCardSvc', 'WhiteCardSvc']

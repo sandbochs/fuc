@@ -8,7 +8,7 @@ FUC.Directive.CardDrtv = ->
                     <div class='left-card'></div>
                     <div class='middle-card'></div>
                     <div class='right-card'></div>
-                    <div class='logo-text'>Fucked Up Cards</div></div>"
+                    <div class='logo-text'>Cards Against DevOps</div></div>"
         element.html card.text + logo_html
 
 FUC.App.directive 'card', FUC.Directive.CardDrtv

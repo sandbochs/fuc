@@ -7,6 +7,7 @@ group :development do
   gem 'thin'
   gem 'awesome_print'
   gem 'quiet_assets'
+  gem 'pry'
 end
 
 group :assets do
